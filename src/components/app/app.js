@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
-
-// styles
-import styles from './app.scss'
+import Nav from '../nav/nav'
 
 class App extends Component {
   render () {
     return (
-      <div className={styles.App}>Hello React</div>
+      <div>
+        <Nav />
+        {this.props.children}
+      </div>
     )
   }
 }
