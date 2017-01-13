@@ -18,7 +18,6 @@ export function fetchUsers () {
   }
 }
 
-
 export function fetchUser (id) {
   return dispatch => {
     axios.get(`${ROOT_URL}/users/${id}`)
