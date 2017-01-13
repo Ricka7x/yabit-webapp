@@ -13,7 +13,7 @@ class Nav extends Component {
               <Link className={styles.link} to='/'>Home</Link>
             </li>
             <li className={styles.menuItem}>
-              <Link className={styles.link} to='users'>Users</Link>
+              <Link className={styles.link} to='/users'>Users</Link>
             </li>
           </ul>
         </div>

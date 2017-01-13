@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+
 class UsersShow extends Component {
   render () {
     return (
-      <h1>Users Show Component</h1>
+      <h1>User id:{this.props.params.userId}</h1>
     )
   }
 }

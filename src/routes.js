@@ -8,7 +8,7 @@ import User from './components/users/users_show'
 export default (
   <Route path='/' component={App}>
     <IndexRoute component={Home}/>
-    <Route path='users' component={Users}/>
-    <Route path='user/:userId' component={User}/>
+    <Route path='/users' component={Users}/>
+    <Route path='/users/:userId' component={User}/>
   </Route>
 )
