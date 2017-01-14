@@ -17,6 +17,7 @@
     "redux-thunk": "^2.1.0"
   },
   "scripts": {
+    "setup": "yarn add json-server -g && yarn",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

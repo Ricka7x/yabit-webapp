@@ -1,4 +1,4 @@
-import { FETCH_USERS, FETCH_USER } from '../actions/types'
+import { FETCH_USERS, SHOW_USER, CREATE_USER } from '../actions/types'
 
 const initialState = {
   all: [],
@@ -8,9 +8,11 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_USERS:
-      return { all: [...action.payload.data]}
-    case FETCH_USER:
-      return { current: action.payload.data}
+      return { ...state, all: [...action.payload.data]}
+    case SHOW_USER:
+      return { ...state, current: action.payload.data}
+    case CREATE_USER:
+      return state   
     default:
       return state
   }

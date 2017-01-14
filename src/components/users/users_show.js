@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {fetchUser} from '../../actions/users'
+import {showUser} from '../../actions/users'
 
 class UsersShow extends Component {
   componentWillMount () {
-      this.props.fetchUser(this.props.params.userId)
+      this.props.showUser(this.props.params.userId)
 }
   render () {
     return (
@@ -22,4 +22,4 @@ class UsersShow extends Component {
 }
 export default connect(({users}) => {
   return {current: users.current}
-}, {fetchUser}) (UsersShow)
+}, {showUser}) (UsersShow)
