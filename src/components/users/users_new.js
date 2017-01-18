@@ -38,8 +38,8 @@ class UsersNew extends Component {
         <Input name='email' value={this.state.email} onChange={this.handleChange} />
         <Select name='role' value={this.state.role} onChange={this.handleChange}>
           <option value=''>Choose a role</option>
-          <option value='Normal'>Normal</option>
-          <option value='Admin'>Admin</option>
+          <option value='normal'>Normal</option>
+          <option value='admin'>Admin</option>
         </Select>
         <Button text='Save' />
       </Form>
