@@ -91,19 +91,3 @@ export function searchUser (searchParams) {
     })
   }
 }
-
-export function createUser (newUser) {
-  return dispatch => {
-    axios.post(`${ROOT_URL}/users`, newUser)
-    .then(response => {
-      dispatch({
-        type: CREATE_USER,
-        payload: response
-      })
-      browserHistory.push('/users')
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
-}
