@@ -1,0 +1,19 @@
+.root {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #ddd;
+}
+
+.wrapper{
+  margin-bottom: 20px;
+}
+
+.hasSuccess {
+  border: 1px solid green;
+}
+
+.hasError {
+  border: 1px solid red;
+}

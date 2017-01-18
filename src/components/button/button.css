@@ -1,0 +1,11 @@
+.root{
+  display: flex;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  max-height: 38px;
+  align-items: center;
+}
