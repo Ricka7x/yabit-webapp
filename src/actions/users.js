@@ -1,4 +1,6 @@
 import {GET_USERS_SUCCESS, GET_CURRENT_USER, SEARCH_USER, DELETE_USER_SUCCESS} from './types'
+
+
 import {browserHistory} from 'react-router'
 import axios from 'axios'
 
@@ -18,6 +20,7 @@ export function getUsers () {
     })
   }
 }
+
 
 export function createUser (newUser) {
   return dispatch => {
@@ -82,6 +85,22 @@ export function searchUser (searchParams) {
         type: SEARCH_USER,
         payload: response
       })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+}
+
+export function createUser (newUser) {
+  return dispatch => {
+    axios.post(`${ROOT_URL}/users`, newUser)
+    .then(response => {
+      dispatch({
+        type: CREATE_USER,
+        payload: response
+      })
+      browserHistory.push('/users')
     })
     .catch((err) => {
       console.log(err)

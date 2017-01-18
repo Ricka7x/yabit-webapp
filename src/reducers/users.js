@@ -1,4 +1,7 @@
+
 import { GET_USERS_SUCCESS, FETCH_USER, GET_CURRENT_USER, SEARCH_USER, DELETE_USER_SUCCESS } from '../actions/types'
+
+
 
 const initialState = {
   all: [],
