@@ -1,4 +1,4 @@
-import {GET_USERS_SUCCESS, GET_CURRENT_USER, SEARCH_USER, DELETE_USER_SUCCESS} from './types'
+import {GET_USERS_SUCCESS, GET_CURRENT_USER, SEARCH_USER, DELETE_USER_SUCCESS, PAGINATE_USERS} from './types'
 
 
 import {browserHistory} from 'react-router'
@@ -12,6 +12,21 @@ export function getUsers () {
     .then(response => {
       dispatch({
         type: GET_USERS_SUCCESS,
+        payload: response
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+}
+
+export function getPaginatedUsers (page, limit = 10) {
+  return dispatch => {
+    axios.get(`${ROOT_URL}/users?_page=${page}&_limit=${limit}`)
+    .then(response => {
+      dispatch({
+        type: PAGINATE_USERS,
         payload: response
       })
     })

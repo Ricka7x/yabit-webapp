@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import UsersList from './users_list'
+import Pagination from '../pagination/pagination'
 import {connect} from 'react-redux'
-import {getUsers, searchUser} from '../../actions/users'
-import {Link} from 'react-router'
+import {getUsers, searchUser, getPaginatedUsers} from '../../actions/users'
 import Search from '../search/search'
 
 class UsersIndex extends Component {
@@ -17,6 +17,7 @@ class UsersIndex extends Component {
   }
   componentWillMount () {
     this.props.getUsers()
+    this.props.getPaginatedUsers(1)
   }
 
   handleChange (e) {
@@ -28,7 +29,7 @@ class UsersIndex extends Component {
   }
 
   render () {
-    if(this.props.users === undefined){
+    if (this.props.users === undefined) {
       return <p>Loading...</p>
     }
     return (
@@ -37,11 +38,13 @@ class UsersIndex extends Component {
           onChange={this.handleChange}
           value={this.state.search}
         />
-        <Link to='/users/new'>Add a user</Link>
         {
           this.props.users.length < 1 ?
             <p>There are currently no users</p> :
-            <UsersList users={this.props.users} />
+            <div>
+              <UsersList users={this.props.users} />
+              <Pagination users={this.props.users}/>
+            </div>
         }
       </div>
     )
@@ -49,4 +52,4 @@ class UsersIndex extends Component {
 }
 export default connect(({users}) => {
   return {users: users.all}
-}, {getUsers, searchUser})(UsersIndex)
+}, {getUsers, searchUser, getPaginatedUsers})(UsersIndex)

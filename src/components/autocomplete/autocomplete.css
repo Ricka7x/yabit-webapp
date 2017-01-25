@@ -1,0 +1,28 @@
+.wrapper{
+  position: relative;
+}
+.root{
+  padding: 10px 15px;
+}
+
+.dropdown{
+  border: 1px solid #ddd;
+  width: 198px;
+  padding-left: 0;
+  background-color: #fff;
+  max-height: 400px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 25px;
+  left: 0;
+}
+
+.listItems{
+  padding: 10px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.listItems:hover{
+  background-color: #ddd;
+}
